@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greeting Page</title>
+    <style>
+        /* Style for the first sentence (Green color) */
+        .green-text {
+            color: green;
+        }
+    </style>
 </head>
 <body>
-    <h1>How are you, {{ name }}?</h1>
+    <h1 class="green-text">What would you like to type? {{ name }}?</h1>  <!-- Green color for the first sentence -->
+    <form method="" action="counter">
+        <textarea name="text" rows="10"></textarea>
+        <input type = "submit">
+    </form>
 </body>
 </html>
+
