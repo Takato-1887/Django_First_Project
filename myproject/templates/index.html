@@ -5,18 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greeting Page</title>
+    <title>Feature Details</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>What would you like to type? {{ name }} </h1>
-    <form method="POST" action="counter">
-        {% csrf_token %}
-        <textarea name="text" rows="10"></textarea>
-        <input type="submit">
-    </form>
+
+    <div class="feature-box">
+        <h1>{{ feature1.name }}</h1>
+        <p>ID: {{ feature1.id }}</p>
+        <p>Description: {{ feature1.details }}</p>
+    </div>
+
 </body>
 </html>
-
 
 
