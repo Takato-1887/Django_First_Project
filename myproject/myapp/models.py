@@ -1,9 +1,14 @@
 from django.db import models
+import math
 
-# Create your models here.
+class Circle(models.Model):
+    radius = models.FloatField()
 
-class Feature():
-    id:int
-    name: str
-    details: str
+    def area(self):
+        return math.pi * self.radius ** 2
 
+    def circumference(self):
+        return 2 * math.pi * self.radius
+
+    def __str__(self):
+        return f"Circle with radius {self.radius}"

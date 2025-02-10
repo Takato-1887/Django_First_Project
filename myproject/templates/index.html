@@ -1,22 +1,16 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feature Details</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Circle Calculations</title>
 </head>
 <body>
-
-    <div class="feature-box">
-        <h1>{{ feature.name }}</h1>
-        <p>ID: {{ feature.id }}</p>
-        <p>Description: {{ feature.details }}</p>
-    </div>
-
+    <h1>Circle Calculations</h1>
+    <p>Radius: {{ radius }}</p>
+    <p>Area: {{ area }}</p>
+    <p>Circumference: {{ circumference }}</p>
 </body>
 </html>
-
 
