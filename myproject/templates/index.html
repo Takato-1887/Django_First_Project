@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circle Calculations</title>
+    <title>Feature List</title>
 </head>
 <body>
-    <h1>Circle Calculations</h1>
-    <p>Radius: {{ radius }}</p>
-    <p>Area: {{ area }}</p>
-    <p>Circumference: {{ circumference }}</p>
+    <h1>Features</h1>
+    <ul>
+        {% for feature in features %}
+            <li>
+                <strong>{{ feature.name }}</strong>: {{ feature.details }}
+            </li>
+        {% empty %}
+            <li>No features found.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
 

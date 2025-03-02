@@ -1,26 +1,13 @@
 from django.shortcuts import render
-from .models import Circle
+from .models import Feature  # Import the Feature model
 
 def index(request):
-    # Define the radius (no user input in this example)
-    radius = 5.0
+    # Fetch all Feature objects from the database
+    features = Feature.objects.all()
 
-    # Create a Circle instance
-    circle = Circle(radius=radius)
-
-    # Calculate area and circumference
-    area = circle.area()
-    circumference = circle.circumference()
-
-    # Pass the results to the template
+    # Pass the features to the template
     context = {
-        "radius": radius,
-        "area": area,
-        "circumference": circumference,
+        "features": features,
     }
 
     return render(request, "index.html", context)
-def counter(request):
-    text = request.POST["text"]
-    count = len(text.split())
-    return render(request, "counter.html",{"count": count})
