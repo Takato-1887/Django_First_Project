@@ -44,3 +44,22 @@ def register(request):
     else:
         # Render the registration form for GET requests
         return render(request, "register.html")
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
+def user_login(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect("index")  # Redirect to the home page after login
+        else:
+            messages.info(request, "Invalid Credentials")
+            return redirect("login")  # Redirect to the same page if login fails
+    else:
+        return render(request, "login.html")
